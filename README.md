@@ -75,15 +75,16 @@ It is worth to also run something like BigQuery AutoML to see if any of the
 more traditional algorithms could also be good for matching, since it is easy
 and quick to do and it might yield on-par or even better results
 
-```mermaid
+````mermaid
 graph TD
     A[Student Data Input] --> B[Data Preprocessing]
-    B --> C[Transformer Model]
-    C --> D[Student Embedding]
-    D --> E[Neo4j Graph Database]
-    E --> F[Vector Similarity Search]
-    E --> G[Graph Algorithms]
-    E --> H[BigQuery AutoML]
+    B --> C[Neo4j Graph Database]
+    C --> D[Transformer Model]
+    D --> E[Student Embedding]
+    E --> |Update| C
+    C --> F[Vector Similarity Search]
+    C --> G[Graph Algorithms]
+    C --> H[BigQuery AutoML]
     F --> I[Fast Approximate Matches]
     G --> J[Complex Relationship Matches]
     H --> K[Traditional ML Matches]
@@ -93,7 +94,8 @@ graph TD
     L --> M[Final Matches]
     M --> N[Match Evaluation]
     N --> O[Feedback Loop]
-    O --> |Update Models| C
+    O --> |Update Models| D
     O --> |Refine Algorithms| L
-    P[Interaction Data] --> N
-```
+    P[Interaction Data] --> C
+    P --> N```
+````
