@@ -1,6 +1,6 @@
 # Peer-to-Peer Student Matching System
 
-1. Key Features (with some overlap):
+1. Key Features:
    - `AcademicInterests` - Match based on similar academic interests, a Discord
      channel where everyone is a mathematics enthusiast, for example.
    - `Goals` - Match based on similar goals, e.g., students aiming for a career
