@@ -79,11 +79,18 @@ and quick to do and it might yield on-par or even better results
 graph TD
     A[Student Data Input] --> B[Data Preprocessing]
     B --> C[Neo4j Graph Database]
-    C <--> D[Transformer Model]
-    C --> E[Matching Algorithms]
-    E --> F[Ensemble Matching]
-    F --> G[Final Matches]
-    G --> H[Match Evaluation]
-    H --> |Feedback Loop| C
-    I[Interaction Data] --> C
+    C --> D[Transformer Model]
+    D --> E[Student Embeddings]
+    E --> C
+    C --> F[Similarity Search]
+    C --> G[Graph-based Matching]
+    C --> H[BigQuery AutoML]
+    F & G & H --> I[Ensemble Matching Algorithm]
+    I --> J[Matched Students]
+    J --> K[Student Interactions]
+    K --> L[Interaction Results]
+    L --> M[Evaluation & Fine-tuning]
+    M --> |Update Weights & Models| D
+    M --> |Refine Algorithms| I
+    M --> |Update Student Profiles| C
 ```
