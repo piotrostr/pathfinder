@@ -75,7 +75,7 @@ It is worth to also run something like BigQuery AutoML to see if any of the
 more traditional algorithms could also be good for matching, since it is easy
 and quick to do and it might yield on-par or even better results
 
-````mermaid
+```mermaid
 graph TD
     A[Student Data Input] --> B[Data Preprocessing]
     B --> C[Neo4j Graph Database]
@@ -97,5 +97,5 @@ graph TD
     O --> |Update Models| D
     O --> |Refine Algorithms| L
     P[Interaction Data] --> C
-    P --> N```
-````
+    P --> N
+```
